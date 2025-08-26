@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'salita'; /* The name you will use to apply the font */
+    src: url('/assets/fonts/Salita.ttf') format('truetype'); /* Path to the .ttf file */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'salitaBold'; /* The name you will use to apply the font */
+    src: url('/assets/fonts/Salita.ttf') format('truetype'); /* Path to the .ttf file for bold */
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'Bunbun'; /* The name you will use to apply the font */
+    src: url('/assets/fonts/Bunbun.ttf') format('truetype'); /* Path to the .ttf file */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'BunbunBold'; /* The name you will use to apply the font */
+    src: url('/assets/fonts/Bunbun.ttf') format('truetype'); /* Path to the .ttf file for bold */
+    font-weight: bold;
+    font-style: normal;
+  }
+  

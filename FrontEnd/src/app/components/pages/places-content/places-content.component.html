@@ -1,0 +1,123 @@
+<!-- 
+
+<app-header></app-header>
+<app-not-found 
+    [visible]="!place"
+    notfoundmessage="Sorry We Don’t Have Any Details About The Plant"
+    resetLinkText="Back To Plants">
+</app-not-found>
+<div class="place-content" *ngIf="place">
+  <h1>{{ place.scientificName || 'Scientific Name Not Available' }}</h1>
+
+  <div *ngIf="place.commonNames?.length">
+    <h3>Common Names:</h3>
+    <ul>
+      <li *ngFor="let name of place.commonNames">{{ name }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="place.family">
+    <strong>Family:</strong> {{ place.family }}
+  </div>
+
+  <div *ngIf="place.habitats">
+    <strong>Habitats:</strong> {{ place.habitats }}
+  </div>
+
+  <div *ngIf="place.range?.length">
+    <h3>Range:</h3>
+    <ul>
+      <li *ngFor="let country of place.range">{{ country }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="place.usdaHardiness">
+    <strong>USDA Hardiness:</strong> {{ place.usdaHardiness }}
+  </div>
+
+  <div *ngIf="place.knownHazards">
+    <strong>Known Hazards:</strong> {{ place.knownHazards }}
+  </div>
+
+  <div *ngIf="place.edibilityRating">
+    <strong>Edibility Rating:</strong> {{ place.edibilityRating }}
+  </div>
+
+  <div *ngIf="place.medicinalRating">
+    <strong>Medicinal Rating:</strong> {{ place.medicinalRating }}
+  </div>
+
+  <div *ngIf="place.medicinalUses">
+    <h3>Medicinal Uses:</h3>
+    <p>{{ place.medicinalUses }}</p>
+  </div>
+
+  <div *ngIf="place.edibleUses">
+    <h3>Edible Uses:</h3>
+    <p>{{ place.edibleUses }}</p>
+  </div>
+
+  <div *ngIf="place.otherUses">
+    <h3>Other Uses:</h3>
+    <p>{{ place.otherUses }}</p>
+  </div>
+
+  <div *ngIf="place.care">
+    <h3>Care Instructions:</h3>
+    <p>{{ place.care }}</p>
+  </div>
+
+  <div *ngIf="place.plantPropagation">
+    <h3>Plant Propagation:</h3>
+    <p>{{ place.plantPropagation }}</p>
+  </div>
+
+  <div *ngIf="place.imgUrl">
+    <img [src]="place.imgUrl" alt="Image of {{ place.scientificName }}" class="place-image"/>
+  </div>
+</div> -->
+<app-header></app-header>
+
+<!-- Not Found Message -->
+<app-not-found 
+    [visible]="!place"
+    notfoundmessage="Sorry, we don’t have any details about the plant."
+    resetLinkText="Back to Plants">
+</app-not-found>
+
+<!-- Main Container -->
+<div class="plant-details-container" *ngIf="place">
+  <!-- Left Section: Plant Image -->
+  <div class="image-section">
+    <img [src]="place.ImgUrl" alt="{{ place.commonNames[0] }}" class="plant-image">
+  </div>
+
+  <!-- Right Section: Details -->
+  <div class="details-section">
+    <h1 class="title">{{ place.scientificName || 'Scientific Name Not Available' }}</h1>
+    <p class="subtitle">{{ place.commonNames?.join(', ') }}</p>
+
+    <div class="info-group">
+      <p><strong>Family:</strong> {{ place.Family }}</p>
+      <p><strong>Habitats:</strong> {{ place.plantHabitats }}</p>
+      <p><strong>Range:</strong> {{ place.range?.join(', ') }}</p>
+      <p><strong>USDA Hardiness:</strong> {{ place.usdaHardiness }}</p>
+      <p><strong>Known Hazards:</strong> {{ place.knownHazards || 'None' }}</p>
+      <p><strong>Plant Propagation:</strong> {{ place.plantPropagation }}</p>
+    </div>
+
+    <!-- Tabbed Section -->
+    <div class="tabs">
+      <button [class.active]="activeTab === 'edible'" (click)="activeTab = 'edible'">Edible Uses</button>
+      <button [class.active]="activeTab === 'medicinal'" (click)="activeTab = 'medicinal'">Medicinal Uses</button>
+      <button [class.active]="activeTab === 'other'" (click)="activeTab = 'other'">Other Uses</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <p *ngIf="activeTab === 'edible'">{{ place.edibleUses || 'No edible uses recorded.' }}</p>
+      <p *ngIf="activeTab === 'medicinal'">{{ place.medicinalUses || 'No medicinal uses recorded.' }}</p>
+      <p *ngIf="activeTab === 'other'">{{ place.otherUses || 'No other uses recorded.' }}</p>
+    </div>
+  </div>
+</div>

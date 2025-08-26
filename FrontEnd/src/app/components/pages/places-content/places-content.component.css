@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
+/* Main container */
+.plant-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  height: 80vh;
+  margin: 20px auto;
+  font-family: 'bunbun';
+  font-style: normal;
+  font-weight: 400;
+  background-image: url("https://files.oaiusercontent.com/file-NRcwyUFAwcjKgxzSfd4ors?se=2025-02-07T18%3A09%3A41Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Df5516814-5824-44b6-bfc8-e2c5f16e6c2c.webp&sig=10pI24v7t/Kg61YEMkmVMcrjFMA8ZUW1a3QKoCdRgGA%3D");
+}
+
+/* Flex layout for image and details */
+@media (min-width: 768px) {
+  .plant-details-container {
+    flex-direction: row;
+  }
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.plant-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  max-height: 100%;
+}
+
+/* Details Section */
+.details-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2F855A;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #4A5568;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Information Section */
+.info-group p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 2px solid #E2E8F0;
+  padding-bottom: 5px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: #4A5568;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.tabs button.active {
+  color: #2F855A;
+  border-bottom: 3px solid #2F855A;
+  font-weight: bold;
+}
+
+/* Tab Content */
+.tab-content {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
