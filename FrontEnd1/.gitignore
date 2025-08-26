@@ -4,6 +4,9 @@
 /dist
 /tmp
 /out-tsc
+
+# large videos
+FrontEnd1/src/assets/images/Background.mp4
 # Only exists if Bazel was run
 /bazel-out
 
