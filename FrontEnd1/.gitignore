@@ -6,7 +6,9 @@
 /out-tsc
 
 # large videos
-FrontEnd1/src/assets/images/Background.mp4
+/src/assets/images/Background.mp4
+/src/assets/images/Background1.mp4
+
 # Only exists if Bazel was run
 /bazel-out
 
