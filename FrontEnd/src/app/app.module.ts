@@ -26,7 +26,7 @@ import { TextInputComponent } from './components/partials/text-input/text-input.
 import { DefaulButtonComponent } from './components/partials/defaul-button/defaul-button.component';
 import { UserReviewComponent } from './components/partials/user-review/user-review.component';
 import { ContactUsComponent } from './components/partials/contact-us/contact-us.component';
-import { MapComponent } from './components/partials/map/map.component';
+// import { MapComponent } from './components/partials/map/map.component';
 import { FormsModule } from '@angular/forms';
 import { DescriptionComponent } from './components/partials/description/description.component';
 import { AYUSHComponent } from './components/partials/ayush/ayush.component';
@@ -60,7 +60,7 @@ import { ThreeViewerComponent } from './components/partials/three-viewer/three-v
     DefaulButtonComponent,
     UserReviewComponent,
     ContactUsComponent,
-    MapComponent,
+    // MapComponent,
     DescriptionComponent,
     AYUSHComponent,
     TherapysComponent,
