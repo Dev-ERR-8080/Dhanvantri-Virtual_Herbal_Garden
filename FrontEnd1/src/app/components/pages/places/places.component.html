@@ -1,0 +1,49 @@
+<app-header></app-header>
+<app-search></app-search>
+<app-not-found 
+  [visible]="!places || places.length <= 0" 
+  notfoundmessage="Sorry, we don't have the details of the plant you searched for" 
+  resetLinkroute="/places"   
+  resetLinkText="Reset Search">
+</app-not-found>
+
+<ul>
+  <li *ngFor="let place of places">
+    <a [routerLink]="['/place', place.scientificName]">
+        <img [src]="place.ImgUrl" [alt]="place.commonNames[0] || 'Default Alt Text'" />
+
+
+      <div class="content">
+          <div class="scientific-name">
+            {{place.scientificName}}
+          </div>
+          <div class="name">
+            {{ place.commonNames[0]}}
+          </div>
+          
+        
+      </div> 
+    </a>
+  </li>
+</ul>
+
+
+
+<!-- <div class="family">
+          <strong>Family:</strong> {{ place.family }}
+        </div>
+        <div class="usda-hardiness">
+          <strong>USDA Hardiness:</strong> {{ place.usdaHardiness }}
+        </div>
+        <div class="known-hazards">
+          <strong>Known Hazards:</strong> {{ place.knownHazards }}
+        </div>
+        <div class="range">
+          <strong>Range:</strong> {{ place.range.join(', ') }}
+        </div>
+        <div class="edibility-rating">
+          <strong>Edibility Rating:</strong> {{ place.edibilityRating }}
+        </div>
+        <div class="medicinal-rating">
+          <strong>Medicinal Rating:</strong> {{ place.medicinalRating }}
+        </div>-->

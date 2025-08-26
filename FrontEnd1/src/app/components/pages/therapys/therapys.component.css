@@ -1,0 +1,66 @@
+/* Container styling */
+/* Container for the grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between containers */
+    padding: 20px; /* Optional padding around the grid */
+}
+
+/* Individual container styling */
+.container {
+    width: 100%; /* Make containers take up the full width of the grid column */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #f9f9f9; /* Optional background color */
+    border: 1px solid #ddd; /* Optional border */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+
+/* Heading styling with dropdown effect */
+.head {
+    font-size: 40px; /* Adjust size as needed */
+    margin: 0;
+    cursor: pointer; /* Indicate that the heading is interactive */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for dropdown effect */
+}
+
+/* Content styling */
+.content {
+    font-size: 18px; /* Adjust size as needed */
+    margin-top: 10px;
+    opacity: 0; /* Hide content initially */
+    max-height: 0; /* Hide content initially */
+    overflow: hidden; /* Hide content overflow */
+    transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth transition for showing content */
+}
+
+/* Show content */
+.content.active {
+    opacity: 1; /* Show content */
+    max-height: 500px; /* Adjust height based on content; make sure it's high enough to display content */
+}
+
+/* Heading dropdown effect */
+.head.active {
+    color: #007BFF; /* Change color to indicate active state */
+    transform: translateY(10px); /* Move heading down when active */
+}
+
+/* List styling */
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+li {
+    margin: 10px 0; /* Add spacing between list items */
+}
+
+/* Optional: Add some space between sections */
+.content + h3 {
+    margin-top: 20px;
+}

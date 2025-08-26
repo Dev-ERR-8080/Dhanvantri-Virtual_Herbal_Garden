@@ -1,0 +1,34 @@
+<header>
+    <div routerLink="/"  class="logo">
+        Dhanavantari
+    </div>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a routerLink="/">HOME</a></li>
+                <li class="products-container">
+                    <a routerLink="/">HERBAL GARDEN</a>
+                    <div class="products-list">
+                        <a routerLink="/places">PLANTS</a>
+                        <a routerLink="/therapys">THERAPYS</a>
+                        <a href="blog">BLOG</a>
+                        <a href="">QUIZ</a>
+                    </div>
+                </li>
+                <li routerLink="/contactUs">CONTACT US</li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="register" *ngIf="!isAuth">
+        <a [routerLink]="'/users/login'">LOGIN</a>
+    </div>
+    <div *ngIf="isAuth" class="menu-container">
+        <a routerLink="/dashboard">{{user.name}}</a>
+        <div class="menu-list">
+            <a routerLink="/profile">PROFILE</a>
+            <a routerLink="/Fav-page">Fav-page</a>
+            <a (click)="logout()">LOGOUT</a>
+        </div>
+    </div>
+</header>
