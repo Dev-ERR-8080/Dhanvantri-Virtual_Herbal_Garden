@@ -76,19 +76,28 @@ export class ThreeViewerComponent implements AfterViewInit {
   }
 
   private onWindowResize(): void {
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.camera.aspect = window.innerWidth / window.innerHeight;
+    const container = this.canvasRef.nativeElement.parentElement as HTMLElement;
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    this.renderer.setSize(width, height);
+    this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
   }
 
   private createScene(): void {
     const canvas = this.canvasRef.nativeElement;
+
+    const container = canvas.parentElement as HTMLElement;
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
     this.renderer = new THREE.WebGLRenderer({ canvas });
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(width, height);
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     this.camera.position.set(0, 1, 5);
 
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
