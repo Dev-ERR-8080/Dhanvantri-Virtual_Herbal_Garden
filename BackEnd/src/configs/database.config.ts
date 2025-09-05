@@ -1,6 +1,8 @@
 import { ConnectOptions, connect } from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-export const dbconncet = () => {
+export const dbconnect = () => {
     connect(process.env.MONGO_URI!, {
         useNewUrlParser: true,
         useUnifiedTopology: true,

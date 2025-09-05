@@ -7,8 +7,8 @@ import  placeRouter  from './routers/place.router';
 import userRouter from './routers/user.router';
 import therapyRouter from './routers/therapys.router';
 import blogRouter from './routers/blog.router';
-import { dbconncet } from './configs/database.config';
-dbconncet();
+import { dbconnect } from './configs/database.config';
+dbconnect();
 
 
 const app = express();
